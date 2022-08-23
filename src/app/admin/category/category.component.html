@@ -1,0 +1,32 @@
+<div class="body-content">
+    <div class="container mt-4">
+        <div class="checkout-box">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Add Categories</h2>
+                    <form class="register-form" role="form" [formGroup]="formdata"
+                        (ngSubmit)="onClickSumbit(formdata.value)">
+                        <input type="hidden" class="form-control" formControlName="id">
+                        <input type="hidden" class="form-control" formControlName="image">
+                        <div class="form-group">
+                            <label class="font-weight-bold">Product Name</label>
+                            <input type="text" class="form-control" formControlName="name">
+                            <span *ngIf="!formdata.controls.name.valid && formdata.controls.name.touched"
+                                class="text-danger">Please enter Product name.</span><br>
+                            <label class="font-weight-bold">Photo</label>
+                            <input type="file" class="form-control" (change)="filechanged($event)" accept="image/*">
+                            <span *ngIf="!formdata.controls.image.valid && formdata.controls.image.touched"
+                                class="text-danger">Please select Photo.</span><br>
+                            <label class="font-weight-bold">Sr No</label>
+                            <input type="number" min="1" class="form-control" formControlName="srno">
+                            <span *ngIf="!formdata.controls.srno.valid && formdata.controls.srno.touched"
+                                class="text-danger">Please select Sr No.</span><br>
+                            <input [disabled]="!formdata.valid" type="submit" value="Save"
+                                class="btn btn-success btn-lg">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

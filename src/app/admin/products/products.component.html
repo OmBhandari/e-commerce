@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <h2>Products ({{ products.length }})</h2>
+    <a routerLink="../product/0" class="btn btn-success pull-right float-right">Add Products</a>
+    <br><br>
+    <div class="row">
+        <div class="col-lg-12 table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Actions</th>
+                    <th>No</th>
+                    <th>Image</th>
+                    <th>products</th> 
+                    <th>Varities</th>                
+                </tr>
+                <tr *ngFor="let product of products  | paginate
+                : {
+                    itemsPerPage: itemsPerPage,
+                    currentPage: page,
+                    totalItems: totalItems
+                  };let i = index;">
+                    <td>
+                        <button routerLink="../product/{{ product._id }}" class="btn btn-primary"><i class="fa fa-edit"></i></button> &nbsp;
+                        <button  class="btn btn-danger" (click)="deleteproduct(product._id)"><i class="fa fa-trash"></i></button>
+                    </td>
+                    <td>{{product.srno}}</td>
+                    <td> <img src="{{ baseurl + product.imagepath }}" onerror="this.src = 'https://cdn-icons-png.flaticon.com/512/1053/1053244.png'" style="height:80px;" ></td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.varities}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<br>
+<pagination-controls
+  class="pagination justify-content-center"
+  (pageChange)="page = $event"
+></pagination-controls>
