@@ -14,11 +14,11 @@
                             <span *ngIf="!formdata.controls.name.valid && formdata.controls.name.touched"
                                 class="text-danger">Please enter Product name.</span><br>
                             <label class="font-weight-bold">Category</label>
-                            <select formControlName="categoryid" class="form-control" value={data.pcid} id="pcid">
+                            <select formControlName="pcid" class="form-control">
                                 <option value="">Category</option>
                                 <option *ngFor="let category of categories;" value="{{ category._id }}">{{category.name}}</option>
                             </select>
-                            <span *ngIf="!formdata.controls.categoryid.valid && formdata.controls.categoryid.touched"
+                            <span *ngIf="!formdata.controls.pcid.valid && formdata.controls.pcid.touched"
                                 class="text-danger">Please enter Category.</span><br>
                             <label class="font-weight-bold">Photo</label>
                             <input type="file" class="form-control" (change)="filechanged($event)" accept="image/*">
@@ -34,11 +34,11 @@
                                 *ngIf="!formdata.controls.specification.valid && formdata.controls.specification.touched"
                                 class="text-danger">Please select Specification.</span><br>
                             <label class="font-weight-bold">MRP</label>
-                            <input type="number" class="form-control" formControlName="mrp">
+                            <input type="number" min="1" class="form-control" formControlName="mrp">
                             <span *ngIf="!formdata.controls.mrp.valid && formdata.controls.mrp.touched"
                                 class="text-danger">Please select MRP.</span><br>
                             <label class="font-weight-bold">Price</label>
-                            <input type="number" class="form-control" formControlName="price">
+                            <input type="number" min="1" class="form-control" formControlName="price">
                             <span *ngIf="!formdata.controls.price.valid && formdata.controls.price.touched"
                                 class="text-danger">Please select Price.</span><br>
                             <input [disabled]="!formdata.valid" type="submit" value="Save"

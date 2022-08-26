@@ -11,6 +11,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
+import { VarietiesComponent } from './varieties/varieties.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     CategoryComponent,
     ProductsComponent,
     ProductComponent,
-    OrdersComponent
+    OrdersComponent,
+    VarietiesComponent
   ],
   imports: [
     CommonModule,

@@ -21,7 +21,7 @@ export class ProductsComponent implements OnInit {
   }
 
   load(){
-    this.api.post("product/get", {}).subscribe((result:any)=>{
+    this.api.post("product/list", {}).subscribe((result:any)=>{
       this.products = result.data;
       this.page =  0;
       this.totalItems = result.totalproducts;

@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsComponent } from './products/products.component';
+import { VarietiesComponent } from './varieties/varieties.component';
 
 const routes: Routes = [
   {path:"", component:DashboardComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"product/:id", component:ProductComponent},
   {path:"products", component:ProductsComponent},
   {path:"orders", component:OrdersComponent},
+  {path:"varieties/:id", component:VarietiesComponent},
 ];
 
 @NgModule({

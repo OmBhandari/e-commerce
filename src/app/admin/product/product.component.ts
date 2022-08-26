@@ -46,7 +46,7 @@ export class ProductComponent implements OnInit {
         id: new FormControl(this.id),
         name: new FormControl(this.product == null ? "" : this.product.name, Validators.required),
         image: new FormControl(""),
-        categoryid: new FormControl(this.product == null ? "" : this.product.categoryid, Validators.required),
+        pcid: new FormControl(this.product == null ? "" : this.product.pcid, Validators.required),
         description: new FormControl(this.product == null ? "" : this.product.description, Validators.required),
         specification: new FormControl(this.product == null ? "" : this.product.specification, Validators.required),
         mrp: new FormControl(this.product == null ? "" : this.product.mrp, Validators.required),
@@ -84,7 +84,7 @@ export class ProductComponent implements OnInit {
         this.router.navigate(["./admin/products"]);
       }
       else {
-        alert("Something went wrong.");
+        console.log(result);
       }
     });
   }

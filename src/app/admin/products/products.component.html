@@ -1,3 +1,14 @@
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="bread"><span><a>Adminstrator</a></span> / <span>Products</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="container mt-5">
     <h2>Products ({{ products.length }})</h2>
     <a routerLink="../product/0" class="btn btn-success pull-right float-right">Add Products</a>
@@ -10,7 +21,7 @@
                     <th>No</th>
                     <th>Image</th>
                     <th>products</th> 
-                    <th>Varities</th>                
+                    <th>Varieties</th>                
                 </tr>
                 <tr *ngFor="let product of products  | paginate
                 : {
@@ -25,7 +36,7 @@
                     <td>{{product.srno}}</td>
                     <td> <img src="{{ baseurl + product.imagepath }}" onerror="this.src = 'https://cdn-icons-png.flaticon.com/512/1053/1053244.png'" style="height:80px;" ></td>
                     <td>{{ product.name }}</td>
-                    <td>{{ product.varities}}</td>
+                    <td > <button routerLink="../varieties/{{ product._id }}"  class="btn btn-warning"><i class="fa">{{product.varieties.length}}</i></button></td>
                 </tr>
             </table>
         </div>
